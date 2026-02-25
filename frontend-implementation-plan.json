@@ -1,0 +1,299 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "ZENTEK – AJIO-style Indian E-Commerce Website (Frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Apply AJIO-inspired visual theme with white background, red accent color, top offer strip, and consistent header across all pages",
+      "acceptanceCriteria": [
+        "Top offer strip displays 'Free Delivery above ₹999 | COD Available'",
+        "Header shows ZENTEK logo on left, search bar centered, and Wishlist/Cart/Login icons on right",
+        "White background with red accent color used consistently on buttons and badges",
+        "Theme is applied uniformly across all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global CSS variables for AJIO-inspired theme: white background (#FFFFFF), dark typography (#1A1A1A), red accent (#E63946), and font settings for clean, bold typography"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom colors matching AJIO style: primary red (#E63946), dark gray for text, and ensure white backgrounds are default"
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "create",
+          "description": "Create Header component with ZENTEK logo on left, centered search bar (decorative only), and Wishlist/Cart/Login icons on right. Use red accent color for icons and hover states. Include cart and wishlist item counts as badges."
+        },
+        {
+          "path": "frontend/src/components/layout/OfferStrip.tsx",
+          "operation": "create",
+          "description": "Create OfferStrip component displaying 'Free Delivery above ₹999 | COD Available' with red background and white text, positioned at the very top above the header"
+        },
+        {
+          "path": "frontend/src/components/layout/Layout.tsx",
+          "operation": "create",
+          "description": "Create main Layout component that wraps all pages with OfferStrip, Header, main content area with white background, and Footer. This ensures consistent theme application across all routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build homepage with hero carousel (3 slides), bank offer strip, 5-product grid, and footer sections",
+      "acceptanceCriteria": [
+        "Hero carousel auto-cycles through all 3 slides with the specified text",
+        "Bank offer strip is visible below the carousel",
+        "Product grid renders all 5 products",
+        "Footer has Customer Care, Returns, Privacy Policy, and Contact sections",
+        "No Men/Women category navigation present"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create HomePage component containing HeroCarousel, BankOfferStrip, ProductGrid, and using the generated hero banner images from frontend/public/assets/generated/hero-slide-1.dim_1200x400.png, frontend/public/assets/generated/hero-slide-2.dim_1200x400.png, and frontend/public/assets/generated/hero-slide-3.dim_1200x400.png. Ensure no Men/Women category navigation is added."
+        },
+        {
+          "path": "frontend/src/components/home/HeroCarousel.tsx",
+          "operation": "create",
+          "description": "Create HeroCarousel component with 3 auto-cycling slides using the generated images: frontend/public/assets/generated/hero-slide-1.dim_1200x400.png for 'ZENTEK MEGA SALE – Up to 60% Off', frontend/public/assets/generated/hero-slide-2.dim_1200x400.png for 'Tech Essentials for Students', and frontend/public/assets/generated/hero-slide-3.dim_1200x400.png for 'Bank Offer – 10% Instant Discount on HDFC Cards'. Include auto-play functionality with navigation dots."
+        },
+        {
+          "path": "frontend/src/components/home/BankOfferStrip.tsx",
+          "operation": "create",
+          "description": "Create BankOfferStrip component displaying '10% Instant Discount on HDFC Cards' with subtle styling below the hero carousel"
+        },
+        {
+          "path": "frontend/src/components/home/ProductGrid.tsx",
+          "operation": "create",
+          "description": "Create ProductGrid component that displays all products from the hardcoded product data in a responsive grid layout. Each product is rendered using ProductCard component."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Create Footer component with four sections: Customer Care, Returns, Privacy Policy, and Contact. Use white background with dark text and organize in a multi-column layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Store 5 ZENTEK products as hardcoded frontend data with all required fields",
+      "acceptanceCriteria": [
+        "All 5 products are present with correct names, prices, MRPs, image URLs, and COD flags",
+        "Product descriptions and key features match the provided content exactly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/products.ts",
+          "operation": "create",
+          "description": "Create products data file containing all 5 ZENTEK products with exact specifications: (1) AuraBuds Pro – ₹1,999/₹2,999, image: https://m.media-amazon.com/images/I/51f1YbJdQBL._AC_UF1000,1000_QL80_.jpg, description: 'Wireless Bluetooth earbuds with active noise cancellation, 30-hour playtime, and premium sound quality', keyFeatures: ['ANC (Active Noise Cancellation)', '30-hour battery life', 'Touch controls', 'IPX5 water resistant'], codAvailable: true; (2) NightDock – ₹2,499/₹3,999, image: https://www.ultraprolink.com/cdn/shop/products/UM1006N.jpg?v=1754570585, description: 'MagSafe-compatible wireless charger with adjustable stand, fast charging support, and elegant design', keyFeatures: ['MagSafe compatible', '15W fast charging', 'Adjustable viewing angle', 'Aluminum body'], codAvailable: true; (3) SnapGrip – ₹999/₹1,499, image: https://dimensiva.com/wp-content/uploads/edd/2021/07/magsafe-battery-pack-by-apple-1024x1024.jpg, description: 'Magnetic portable power bank with 5000mAh capacity, MagSafe compatibility, and compact design', keyFeatures: ['5000mAh capacity', 'MagSafe compatible', 'Compact and lightweight', 'LED indicator'], codAvailable: true; (4) HyperKey – ₹1,799/₹2,599, image: https://images-cdn.ubuy.co.in/686d4ba05282f1edcc00aa03-magegee-mini-60-gaming-keyboard-rgb.jpg, description: 'Mechanical gaming keyboard with RGB backlighting, hot-swappable switches, and 60% compact layout', keyFeatures: ['Mechanical switches', 'RGB backlighting', 'Hot-swappable', 'Compact 60% layout'], codAvailable: true; (5) LumiCam – ₹799/₹1,299, image: https://m.media-amazon.com/images/I/31l1nb1g-rS._AC_UF1000,1000_QL80_.jpg, description: 'HD webcam with auto-focus, built-in microphone, and wide-angle lens for video calls and streaming', keyFeatures: ['1080p HD video', 'Auto-focus', 'Built-in microphone', '110° wide angle'], codAvailable: true. Each product must have id, name, price (in paise for calculation), mrp (in paise), imageUrl, description, keyFeatures array, and codAvailable boolean."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create product cards displaying image, name, price, MRP, discount, delivery info, COD badge, wishlist toggle, and Add to Cart button",
+      "acceptanceCriteria": [
+        "Product image, name, price, strikethrough MRP, and discount percentage are visible on each card",
+        "'Free Delivery' text and 'COD Available' badge appear on each card",
+        "Wishlist button toggles the item in/out of the wishlist",
+        "'Add to Cart' button adds the item to the cart"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/product/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create ProductCard component displaying product image, name, formatted price (₹), strikethrough MRP, calculated discount percentage, 'Free Delivery' text, 'COD Available' badge with red background, toggleable wishlist heart button (filled when wishlisted), and 'Add to Cart' button with red background. Clicking the card navigates to product details page. Use the cart and wishlist context hooks for state management."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build Product Details page with large image, full description, key features, and Add to Cart/Buy Now buttons",
+      "acceptanceCriteria": [
+        "Navigating to a product URL shows the full details page",
+        "Full description text and key features list are displayed",
+        "Price, MRP, discount, and COD availability are shown",
+        "'Add to Cart' adds the product to the cart",
+        "'Buy Now' navigates directly to the checkout page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductDetailsPage.tsx",
+          "operation": "create",
+          "description": "Create ProductDetailsPage component displaying large product image, product name, formatted price and strikethrough MRP with discount percentage, COD availability text, full description paragraph, key features as bulleted list, 'Add to Cart' button (adds to cart), and 'Buy Now' button (adds to cart and navigates to /checkout). Use URL parameter to identify the product and fetch from hardcoded data."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /product/:id that renders ProductDetailsPage within the Layout wrapper"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build Cart page with item list, quantity controls, removal, price summary, COD toggle, and mock payment button",
+      "acceptanceCriteria": [
+        "Cart lists all added items with images and names",
+        "Quantity can be increased or decreased; item is removed at quantity 0",
+        "Removing an item removes it from the list",
+        "Price summary shows subtotal, savings, and delivery charge (free above ₹999)",
+        "COD toggle is present",
+        "'Proceed to Pay' button is present and triggers a mock payment flow"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CartPage.tsx",
+          "operation": "create",
+          "description": "Create CartPage component listing all cart items with images and names, quantity increment/decrement controls (removing item at quantity 0), explicit remove button, price summary section showing subtotal (sum of item prices × quantities), discount saved (sum of (MRP - price) × quantities), delivery charge (₹99 if subtotal < ₹999, else ₹0 with 'Free Delivery' label), grand total, COD option toggle, and 'Proceed to Pay' button that triggers mock Razorpay payment (simulated success after 2 seconds) then navigates to order success. Use cart context for state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /cart that renders CartPage within the Layout wrapper"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build multi-step Checkout flow with address form, payment method selection, and Order Success page",
+      "acceptanceCriteria": [
+        "Step 1 shows an address form with Indian-format fields",
+        "Step 2 lets the user choose Razorpay (mock) or COD",
+        "Placing order clears the cart and shows the Order Success page",
+        "Order Success page displays a unique order ID and a 'Continue Shopping' link"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CheckoutPage.tsx",
+          "operation": "create",
+          "description": "Create CheckoutPage component with multi-step flow: Step 1 displays AddressForm with Indian format fields (Name, Phone, Address Line 1, Address Line 2, City, State, Pincode), Step 2 displays PaymentMethodSelector with options for 'Razorpay UPI (Test)' and 'Cash on Delivery', and a 'Place Order' button that clears the cart, generates a unique order ID (timestamp-based), and navigates to /order-success/:orderId. Use local state to manage steps and form data."
+        },
+        {
+          "path": "frontend/src/pages/OrderSuccessPage.tsx",
+          "operation": "create",
+          "description": "Create OrderSuccessPage component displaying order confirmation message, order ID from URL parameter, and a 'Continue Shopping' button linking to the homepage. Use green checkmark icon and celebratory styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for /checkout and /order-success/:orderId within the Layout wrapper"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build Wishlist page with Add to Cart and Remove from Wishlist buttons for each item",
+      "acceptanceCriteria": [
+        "Wishlist page is accessible from the header icon",
+        "All wishlisted products are listed with image, name, and price",
+        "'Add to Cart' button on wishlist items works correctly",
+        "'Remove from Wishlist' removes the item from the wishlist"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/WishlistPage.tsx",
+          "operation": "create",
+          "description": "Create WishlistPage component displaying all wishlisted products in a grid or list layout. Each item shows product image, name, formatted price, 'Add to Cart' button (adds to cart context), and 'Remove from Wishlist' button (removes from wishlist context). Show empty state message when wishlist is empty."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /wishlist that renders WishlistPage within the Layout wrapper"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Build Login and Signup pages with basic authentication using localStorage for session state",
+      "acceptanceCriteria": [
+        "Signup page collects name, email, and password",
+        "Login page authenticates and stores session in localStorage",
+        "After login, header shows user name instead of 'Login'",
+        "Logout clears the session"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SignupPage.tsx",
+          "operation": "create",
+          "description": "Create SignupPage component with form fields for name, email, and password. On submit, store user data in localStorage under 'zentek_user' key (as JSON with name, email, and hashed password simulation), set 'zentek_auth_token' to a mock JWT string, and navigate to homepage. Use simple email validation."
+        },
+        {
+          "path": "frontend/src/pages/LoginPage.tsx",
+          "operation": "create",
+          "description": "Create LoginPage component with form fields for email and password. On submit, validate against stored user data in localStorage ('zentek_user'), set 'zentek_auth_token' to a mock JWT string if credentials match, and navigate to homepage. Show error message for invalid credentials."
+        },
+        {
+          "path": "frontend/src/contexts/AuthContext.tsx",
+          "operation": "create",
+          "description": "Create AuthContext providing authentication state (isAuthenticated, user name), login/logout functions that manage localStorage ('zentek_auth_token' and 'zentek_user'), and hooks (useAuth). On mount, check localStorage for existing session and restore user state."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Update Header to use AuthContext. If authenticated, display user name with a dropdown menu containing 'Order History' and 'Logout' options. If not authenticated, show 'Login' link navigating to /login. Logout clears localStorage and all cached data (cart, wishlist)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for /login and /signup, and wrap the entire app in AuthContext provider"
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build Order History page listing all orders placed in the current session",
+      "acceptanceCriteria": [
+        "Order History page is accessible from the user menu after login",
+        "Each order shows order ID, date, items, total, and payment method",
+        "Orders placed in the current session are listed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/OrderHistoryPage.tsx",
+          "operation": "create",
+          "description": "Create OrderHistoryPage component displaying a list of all orders stored in localStorage under 'zentek_orders' key (array of order objects with orderId, date, items array with product names, totalAmount, paymentMethod). Show empty state if no orders exist. Each order card displays order ID, formatted date, items list, total amount, and payment method (Razorpay or COD). Orders are added to localStorage when checkout completes."
+        },
+        {
+          "path": "frontend/src/pages/CheckoutPage.tsx",
+          "operation": "modify",
+          "description": "Update CheckoutPage to store completed orders in localStorage under 'zentek_orders' array when 'Place Order' is clicked, including orderId, date (ISO string), items (with product IDs, names, quantities), totalAmount, and paymentMethod"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /orders that renders OrderHistoryPage within the Layout wrapper, protected by authentication check (redirect to /login if not authenticated)"
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Implement cart and wishlist state management with React Context and localStorage persistence",
+      "acceptanceCriteria": [
+        "Cart items persist when navigating between pages",
+        "Wishlist items persist when navigating between pages",
+        "Cart and wishlist are restored from localStorage on page refresh"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/CartContext.tsx",
+          "operation": "create",
+          "description": "Create CartContext providing cart state (array of items with productId, quantity), addToCart, updateQuantity, removeFromCart, and clearCart functions. Persist cart to localStorage under 'zentek_cart' key. On mount, restore cart from localStorage. Export useCart hook."
+        },
+        {
+          "path": "frontend/src/contexts/WishlistContext.tsx",
+          "operation": "create",
+          "description": "Create WishlistContext providing wishlist state (array of product IDs), addToWishlist, removeFromWishlist, toggleWishlist, and isInWishlist functions. Persist wishlist to localStorage under 'zentek_wishlist' key. On mount, restore wishlist from localStorage. Export useWishlist hook."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the app in CartContext and WishlistContext providers at the root level, outside the router"
+        }
+      ]
+    }
+  ]
+}

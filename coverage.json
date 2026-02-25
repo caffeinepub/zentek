@@ -1,0 +1,311 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T15:51:29.429Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 12,
+    "implemented": 11,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Apply a clean AJIO-inspired visual theme across the entire app: white background, bold black/dark-gray typography, accent color red (#E63946) for CTAs and badges, a top offer strip with 'Free Delivery above ₹999 | COD Available', and a consistent header with the ZENTEK logo on the left, a centered search bar, and Wishlist ❤️ / Cart 🛒 / Login icons on the right. Use this theme consistently across all pages.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/components/layout/OfferStrip.tsx",
+          "frontend/src/components/layout/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/components/layout/OfferStrip.tsx",
+          "frontend/src/components/layout/Layout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Build an Order History page accessible after login that lists all orders placed in the current session, showing order ID, date, items ordered, total amount, and payment method (Razorpay or COD).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/OrderHistoryPage.tsx",
+          "frontend/src/pages/CheckoutPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/OrderHistoryPage.tsx",
+          "frontend/src/pages/CheckoutPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Implement cart and wishlist state management using React Context or a lightweight global store (since Redux Toolkit is not available in this stack). Cart state must survive navigation between pages within the same session. Persist cart and wishlist to localStorage so they survive page refreshes.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/contexts/CartContext.tsx",
+          "frontend/src/contexts/WishlistContext.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/contexts/CartContext.tsx",
+          "frontend/src/contexts/WishlistContext.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Implement backend Motoko actor with the following data storage: (1) Product list with all 5 seeded ZENTEK products (name, imageUrl, price, mrp, description, keyFeatures, codAvailable); (2) User accounts (username, email, hashed-equivalent password); (3) Orders (userId, items, totalAmount, paymentMethod, address, timestamp). Expose query functions: getProducts(), getProduct(id), and update functions: createUser(), loginUser(), createOrder(), getMyOrders(userId).",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Build the homepage with: (1) a hero banner carousel with 3 slides — 'ZENTEK MEGA SALE – Up to 60% Off', 'Tech Essentials for Students', 'Bank Offer – 10% Instant Discount on HDFC Cards'; (2) a bank offer strip below the carousel with '10% Instant Discount on HDFC Cards'; (3) a product grid displaying all 5 products; (4) a footer with Customer Care, Returns, Privacy Policy, and Contact sections. Do NOT add Men/Women category navigation.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/components/home/HeroCarousel.tsx",
+          "frontend/src/components/home/BankOfferStrip.tsx",
+          "frontend/src/components/home/ProductGrid.tsx",
+          "frontend/src/components/layout/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/components/home/HeroCarousel.tsx",
+          "frontend/src/components/home/BankOfferStrip.tsx",
+          "frontend/src/components/layout/Footer.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Store the 5 ZENTEK products as hardcoded data in the frontend (no backend required for products). Each product must include: name, image URL (from the provided links), price, MRP, description, key features, and COD flag. Products: (1) AuraBuds Pro – ₹1,999/₹2,999, image: https://m.media-amazon.com/images/I/51f1YbJdQBL._AC_UF1000,1000_QL80_.jpg; (2) NightDock – ₹2,499/₹3,999, image: https://www.ultraprolink.com/cdn/shop/products/UM1006N.jpg?v=1754570585; (3) SnapGrip – ₹999/₹1,499, image: https://dimensiva.com/wp-content/uploads/edd/2021/07/magsafe-battery-pack-by-apple-1024x1024.jpg; (4) HyperKey – ₹1,799/₹2,599, image: https://images-cdn.ubuy.co.in/686d4ba05282f1edcc00aa03-magegee-mini-60-gaming-keyboard-rgb.jpg; (5) LumiCam – ₹799/₹1,299, image: https://m.media-amazon.com/images/I/31l1nb1g-rS._AC_UF1000,1000_QL80_.jpg.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/data/products.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/data/products.ts"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Each product card in the grid must display: product image, name, price in ₹, MRP with strikethrough, calculated % discount, 'Free Delivery' text, 'COD Available' badge, a Wishlist heart button (togglable), and an 'Add to Cart' button.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/product/ProductCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/product/ProductCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Build a Product Details page (accessible by clicking a product card) that displays: large product image, product name, price + MRP + calculated % discount, COD availability text, full product description paragraph, key features list, and two action buttons: 'Add to Cart' and 'Buy Now'. 'Buy Now' should proceed directly to checkout.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ProductDetailsPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ProductDetailsPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Build a Cart page that lists all cart items with their images and names, allows quantity increment/decrement, allows item removal, shows a price summary (subtotal, discount saved, delivery charge — free above ₹999, else ₹99), a COD option toggle, and a 'Proceed to Pay' button that triggers a mock Razorpay payment flow (simulated success is acceptable).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/CartPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/CartPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Build a multi-step Checkout flow: Step 1 – address entry form in Indian format (Name, Phone, Address Line 1, Address Line 2, City, State, Pincode); Step 2 – payment method selection (Razorpay UPI test [mock] or Cash on Delivery); Step 3 – Order Success page showing order confirmation, order ID, and a 'Continue Shopping' button.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/CheckoutPage.tsx",
+          "frontend/src/pages/OrderSuccessPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/CheckoutPage.tsx",
+          "frontend/src/pages/OrderSuccessPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Build a Wishlist page that displays all wishlisted products. Each item should have an 'Add to Cart' button and a 'Remove from Wishlist' button. Wishlist state must be managed in React state (or a simple context/store) and persist through the session.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/WishlistPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/WishlistPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Build Login and Signup pages with simple form fields (name for signup, email, password). Use Internet Identity or a simple local auth state (no backend required — mock JWT or session state stored in localStorage is acceptable). After login, show the user's name in the header in place of the 'Login' link, and enable access to order history.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/SignupPage.tsx",
+          "frontend/src/pages/LoginPage.tsx",
+          "frontend/src/contexts/AuthContext.tsx",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/SignupPage.tsx",
+          "frontend/src/pages/LoginPage.tsx",
+          "frontend/src/contexts/AuthContext.tsx",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/hero-slide-1.dim_1200x400.png",
+    "frontend/public/assets/generated/hero-slide-2.dim_1200x400.png",
+    "frontend/public/assets/generated/hero-slide-3.dim_1200x400.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/home/BankOfferStrip.tsx",
+    "frontend/src/components/home/HeroCarousel.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/components/layout/Layout.tsx",
+    "frontend/src/components/layout/OfferStrip.tsx",
+    "frontend/src/components/product/ProductCard.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/contexts/AuthContext.tsx",
+    "frontend/src/contexts/CartContext.tsx",
+    "frontend/src/contexts/WishlistContext.tsx",
+    "frontend/src/data/products.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CartPage.tsx",
+    "frontend/src/pages/CheckoutPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/LoginPage.tsx",
+    "frontend/src/pages/OrderHistoryPage.tsx",
+    "frontend/src/pages/OrderSuccessPage.tsx",
+    "frontend/src/pages/ProductDetailsPage.tsx",
+    "frontend/src/pages/SignupPage.tsx",
+    "frontend/src/pages/WishlistPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

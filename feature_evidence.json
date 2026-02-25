@@ -1,0 +1,245 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-apply-a-clean-ajio-inspired-visual-theme-across-the-entire-app-white-background-bold-black-dark-gray-typography-accent-color-red-e63946-for-ctas-and-badges-a-top-offer-strip-with-free-delivery-above-999-cod-available-and-a-consistent-header-with-the-zentek-logo-on-the-left-a-centered-search-bar-and-wishlist-cart-login-icons-on-the-right-use-this-theme-consistently-across-all-pages",
+      "featureTitle": "Apply a clean AJIO-inspired visual theme across the entire app: white background, bold black/dark-gray typography, accent color red (#E63946) for CTAs and badges, a top offer strip with 'Free Delivery above ₹999 | COD Available', and a consistent header with the ZENTEK logo on the left, a centered search bar, and Wishlist ❤️ / Cart 🛒 / Login icons on the right. Use this theme consistently across all pages.",
+      "files": [
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/layout/Layout.tsx",
+        "frontend/src/components/layout/OfferStrip.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-homepage-with-1-a-hero-banner-carousel-with-3-slides-zentek-mega-sale-up-to-60-off-tech-essentials-for-students-bank-offer-10-instant-discount-on-hdfc-cards-2-a-bank-offer-strip-below-the-carousel-with-10-instant-discount-on-hdfc-cards-3-a-product-grid-displaying-all-5-products-4-a-footer-with-customer-care-returns-privacy-policy-and-contact-sections-do-not-add-men-women-category-navigation",
+      "featureTitle": "Build the homepage with: (1) a hero banner carousel with 3 slides — 'ZENTEK MEGA SALE – Up to 60% Off', 'Tech Essentials for Students', 'Bank Offer – 10% Instant Discount on HDFC Cards'; (2) a bank offer strip below the carousel with '10% Instant Discount on HDFC Cards'; (3) a product grid displaying all 5 products; (4) a footer with Customer Care, Returns, Privacy Policy, and Contact sections. Do NOT add Men/Women category navigation.",
+      "files": [
+        "frontend/src/components/home/BankOfferStrip.tsx",
+        "frontend/src/components/home/HeroCarousel.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-store-the-5-zentek-products-as-hardcoded-data-in-the-frontend-no-backend-required-for-products-each-product-must-include-name-image-url-from-the-provided-links-price-mrp-description-key-features-and-cod-flag-products-1-aurabuds-pro-1-999-2-999-image-https-m-media-amazon-com-images-i-51f1ybjdqbl-ac-uf1000-1000-ql80-jpg-2-nightdock-2-499-3-999-image-https-www-ultraprolink-com-cdn-shop-products-um1006n-jpg-v-1754570585-3-snapgrip-999-1-499-image-https-dimensiva-com-wp-content-uploads-edd-2021-07-magsafe-battery-pack-by-apple-1024x1024-jpg-4-hyperkey-1-799-2-599-image-https-images-cdn-ubuy-co-in-686d4ba05282f1edcc00aa03-magegee-mini-60-gaming-keyboard-rgb-jpg-5-lumicam-799-1-299-image-https-m-media-amazon-com-images-i-31l1nb1g-rs-ac-uf1000-1000-ql80-jpg",
+      "featureTitle": "Store the 5 ZENTEK products as hardcoded data in the frontend (no backend required for products). Each product must include: name, image URL (from the provided links), price, MRP, description, key features, and COD flag. Products: (1) AuraBuds Pro – ₹1,999/₹2,999, image: https://m.media-amazon.com/images/I/51f1YbJdQBL._AC_UF1000,1000_QL80_.jpg; (2) NightDock – ₹2,499/₹3,999, image: https://www.ultraprolink.com/cdn/shop/products/UM1006N.jpg?v=1754570585; (3) SnapGrip – ₹999/₹1,499, image: https://dimensiva.com/wp-content/uploads/edd/2021/07/magsafe-battery-pack-by-apple-1024x1024.jpg; (4) HyperKey – ₹1,799/₹2,599, image: https://images-cdn.ubuy.co.in/686d4ba05282f1edcc00aa03-magegee-mini-60-gaming-keyboard-rgb.jpg; (5) LumiCam – ₹799/₹1,299, image: https://m.media-amazon.com/images/I/31l1nb1g-rS._AC_UF1000,1000_QL80_.jpg.",
+      "files": [
+        "frontend/src/data/products.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-each-product-card-in-the-grid-must-display-product-image-name-price-in-mrp-with-strikethrough-calculated-discount-free-delivery-text-cod-available-badge-a-wishlist-heart-button-togglable-and-an-add-to-cart-button",
+      "featureTitle": "Each product card in the grid must display: product image, name, price in ₹, MRP with strikethrough, calculated % discount, 'Free Delivery' text, 'COD Available' badge, a Wishlist heart button (togglable), and an 'Add to Cart' button.",
+      "files": [
+        "frontend/src/components/product/ProductCard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-product-details-page-accessible-by-clicking-a-product-card-that-displays-large-product-image-product-name-price-mrp-calculated-discount-cod-availability-text-full-product-description-paragraph-key-features-list-and-two-action-buttons-add-to-cart-and-buy-now-buy-now-should-proceed-directly-to-checkout",
+      "featureTitle": "Build a Product Details page (accessible by clicking a product card) that displays: large product image, product name, price + MRP + calculated % discount, COD availability text, full product description paragraph, key features list, and two action buttons: 'Add to Cart' and 'Buy Now'. 'Buy Now' should proceed directly to checkout.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/ProductDetailsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-cart-page-that-lists-all-cart-items-with-their-images-and-names-allows-quantity-increment-decrement-allows-item-removal-shows-a-price-summary-subtotal-discount-saved-delivery-charge-free-above-999-else-99-a-cod-option-toggle-and-a-proceed-to-pay-button-that-triggers-a-mock-razorpay-payment-flow-simulated-success-is-acceptable",
+      "featureTitle": "Build a Cart page that lists all cart items with their images and names, allows quantity increment/decrement, allows item removal, shows a price summary (subtotal, discount saved, delivery charge — free above ₹999, else ₹99), a COD option toggle, and a 'Proceed to Pay' button that triggers a mock Razorpay payment flow (simulated success is acceptable).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/CartPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-multi-step-checkout-flow-step-1-address-entry-form-in-indian-format-name-phone-address-line-1-address-line-2-city-state-pincode-step-2-payment-method-selection-razorpay-upi-test-mock-or-cash-on-delivery-step-3-order-success-page-showing-order-confirmation-order-id-and-a-continue-shopping-button",
+      "featureTitle": "Build a multi-step Checkout flow: Step 1 – address entry form in Indian format (Name, Phone, Address Line 1, Address Line 2, City, State, Pincode); Step 2 – payment method selection (Razorpay UPI test [mock] or Cash on Delivery); Step 3 – Order Success page showing order confirmation, order ID, and a 'Continue Shopping' button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/CheckoutPage.tsx",
+        "frontend/src/pages/OrderSuccessPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-wishlist-page-that-displays-all-wishlisted-products-each-item-should-have-an-add-to-cart-button-and-a-remove-from-wishlist-button-wishlist-state-must-be-managed-in-react-state-or-a-simple-context-store-and-persist-through-the-session",
+      "featureTitle": "Build a Wishlist page that displays all wishlisted products. Each item should have an 'Add to Cart' button and a 'Remove from Wishlist' button. Wishlist state must be managed in React state (or a simple context/store) and persist through the session.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/WishlistPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-login-and-signup-pages-with-simple-form-fields-name-for-signup-email-password-use-internet-identity-or-a-simple-local-auth-state-no-backend-required-mock-jwt-or-session-state-stored-in-localstorage-is-acceptable-after-login-show-the-user-s-name-in-the-header-in-place-of-the-login-link-and-enable-access-to-order-history",
+      "featureTitle": "Build Login and Signup pages with simple form fields (name for signup, email, password). Use Internet Identity or a simple local auth state (no backend required — mock JWT or session state stored in localStorage is acceptable). After login, show the user's name in the header in place of the 'Login' link, and enable access to order history.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/contexts/AuthContext.tsx",
+        "frontend/src/pages/LoginPage.tsx",
+        "frontend/src/pages/SignupPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-order-history-page-accessible-after-login-that-lists-all-orders-placed-in-the-current-session-showing-order-id-date-items-ordered-total-amount-and-payment-method-razorpay-or-cod",
+      "featureTitle": "Build an Order History page accessible after login that lists all orders placed in the current session, showing order ID, date, items ordered, total amount, and payment method (Razorpay or COD).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/CheckoutPage.tsx",
+        "frontend/src/pages/OrderHistoryPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-cart-and-wishlist-state-management-using-react-context-or-a-lightweight-global-store-since-redux-toolkit-is-not-available-in-this-stack-cart-state-must-survive-navigation-between-pages-within-the-same-session-persist-cart-and-wishlist-to-localstorage-so-they-survive-page-refreshes",
+      "featureTitle": "Implement cart and wishlist state management using React Context or a lightweight global store (since Redux Toolkit is not available in this stack). Cart state must survive navigation between pages within the same session. Persist cart and wishlist to localStorage so they survive page refreshes.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/contexts/CartContext.tsx",
+        "frontend/src/contexts/WishlistContext.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

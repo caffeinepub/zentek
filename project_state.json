@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "ZENTEK - A simplified AJIO-style Indian e-commerce website (assignment project) with React/Vite/TailwindCSS frontend, Node.js/Express backend, MongoDB database, JWT auth, Redux Toolkit for cart & wishlist, Razorpay test payments, and COD support. Features 5 tech products, hero banner carousel, product details pages, cart, wishlist, checkout flow, and order history.",
+  "architectural_notes": [
+    "Frontend: React + Vite + TailwindCSS; Backend: Node.js + Express; DB: MongoDB; Auth: JWT (basic); State: Redux Toolkit (cart & wishlist only)",
+    "Payments: Razorpay test mode (UPI/Cards/NetBanking) + Cash on Delivery mock logic",
+    "Folder structure: client/(components, pages, redux, data) and server/(routes, models, controllers)",
+    "No Men/Women category navigation; 5 fixed tech products only; no advanced security required"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Hero banner slide 1 – bold tech sale promotional graphic with dark background, orange-red gradient accents, and large text area placeholder for 'ZENTEK MEGA SALE – Up to 60% Off' (hero-slide-1.dim_1200x400.png)\n- Hero banner slide 2 – clean lifestyle tech scene with student desk aesthetic, cool blue tones, and text area placeholder for 'Tech Essentials for Students' (hero-slide-2.dim_1200x400.png)\n- Hero banner slide 3 – premium banking offer graphic with gold and white tones, HDFC-style visual cue, text area placeholder for 'Bank Offer – 10% Instant Discount on HDFC Cards' (hero-slide-3.dim_1200x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-apply-a-clean-ajio-inspired-visual-theme-across-the-entire-app-white-background-bold-black-dark-gray-typography-accent-color-red-e63946-for-ctas-and-badges-a-top-offer-strip-with-free-delivery-above-999-cod-available-and-a-consistent-header-with-the-zentek-logo-on-the-left-a-centered-search-bar-and-wishlist-cart-login-icons-on-the-right-use-this-theme-consistently-across-all-pages",
+      "title": "Apply a clean AJIO-inspired visual theme across the entire app: white background, bold black/dark-gray typography, accent color red (#E63946) for CTAs and badges, a top offer strip with 'Free Delivery above ₹999 | COD Available', and a consistent header with the ZENTEK logo on the left, a centered search bar, and Wishlist ❤️ / Cart 🛒 / Login icons on the right. Use this theme consistently across all pages.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-homepage-with-1-a-hero-banner-carousel-with-3-slides-zentek-mega-sale-up-to-60-off-tech-essentials-for-students-bank-offer-10-instant-discount-on-hdfc-cards-2-a-bank-offer-strip-below-the-carousel-with-10-instant-discount-on-hdfc-cards-3-a-product-grid-displaying-all-5-products-4-a-footer-with-customer-care-returns-privacy-policy-and-contact-sections-do-not-add-men-women-category-navigation",
+      "title": "Build the homepage with: (1) a hero banner carousel with 3 slides — 'ZENTEK MEGA SALE – Up to 60% Off', 'Tech Essentials for Students', 'Bank Offer – 10% Instant Discount on HDFC Cards'; (2) a bank offer strip below the carousel with '10% Instant Discount on HDFC Cards'; (3) a product grid displaying all 5 products; (4) a footer with Customer Care, Returns, Privacy Policy, and Contact sections. Do NOT add Men/Women category navigation.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-store-the-5-zentek-products-as-hardcoded-data-in-the-frontend-no-backend-required-for-products-each-product-must-include-name-image-url-from-the-provided-links-price-mrp-description-key-features-and-cod-flag-products-1-aurabuds-pro-1-999-2-999-image-https-m-media-amazon-com-images-i-51f1ybjdqbl-ac-uf1000-1000-ql80-jpg-2-nightdock-2-499-3-999-image-https-www-ultraprolink-com-cdn-shop-products-um1006n-jpg-v-1754570585-3-snapgrip-999-1-499-image-https-dimensiva-com-wp-content-uploads-edd-2021-07-magsafe-battery-pack-by-apple-1024x1024-jpg-4-hyperkey-1-799-2-599-image-https-images-cdn-ubuy-co-in-686d4ba05282f1edcc00aa03-magegee-mini-60-gaming-keyboard-rgb-jpg-5-lumicam-799-1-299-image-https-m-media-amazon-com-images-i-31l1nb1g-rs-ac-uf1000-1000-ql80-jpg",
+      "title": "Store the 5 ZENTEK products as hardcoded data in the frontend (no backend required for products). Each product must include: name, image URL (from the provided links), price, MRP, description, key features, and COD flag. Products: (1) AuraBuds Pro – ₹1,999/₹2,999, image: https://m.media-amazon.com/images/I/51f1YbJdQBL._AC_UF1000,1000_QL80_.jpg; (2) NightDock – ₹2,499/₹3,999, image: https://www.ultraprolink.com/cdn/shop/products/UM1006N.jpg?v=1754570585; (3) SnapGrip – ₹999/₹1,499, image: https://dimensiva.com/wp-content/uploads/edd/2021/07/magsafe-battery-pack-by-apple-1024x1024.jpg; (4) HyperKey – ₹1,799/₹2,599, image: https://images-cdn.ubuy.co.in/686d4ba05282f1edcc00aa03-magegee-mini-60-gaming-keyboard-rgb.jpg; (5) LumiCam – ₹799/₹1,299, image: https://m.media-amazon.com/images/I/31l1nb1g-rS._AC_UF1000,1000_QL80_.jpg.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-each-product-card-in-the-grid-must-display-product-image-name-price-in-mrp-with-strikethrough-calculated-discount-free-delivery-text-cod-available-badge-a-wishlist-heart-button-togglable-and-an-add-to-cart-button",
+      "title": "Each product card in the grid must display: product image, name, price in ₹, MRP with strikethrough, calculated % discount, 'Free Delivery' text, 'COD Available' badge, a Wishlist heart button (togglable), and an 'Add to Cart' button.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-product-details-page-accessible-by-clicking-a-product-card-that-displays-large-product-image-product-name-price-mrp-calculated-discount-cod-availability-text-full-product-description-paragraph-key-features-list-and-two-action-buttons-add-to-cart-and-buy-now-buy-now-should-proceed-directly-to-checkout",
+      "title": "Build a Product Details page (accessible by clicking a product card) that displays: large product image, product name, price + MRP + calculated % discount, COD availability text, full product description paragraph, key features list, and two action buttons: 'Add to Cart' and 'Buy Now'. 'Buy Now' should proceed directly to checkout.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-cart-page-that-lists-all-cart-items-with-their-images-and-names-allows-quantity-increment-decrement-allows-item-removal-shows-a-price-summary-subtotal-discount-saved-delivery-charge-free-above-999-else-99-a-cod-option-toggle-and-a-proceed-to-pay-button-that-triggers-a-mock-razorpay-payment-flow-simulated-success-is-acceptable",
+      "title": "Build a Cart page that lists all cart items with their images and names, allows quantity increment/decrement, allows item removal, shows a price summary (subtotal, discount saved, delivery charge — free above ₹999, else ₹99), a COD option toggle, and a 'Proceed to Pay' button that triggers a mock Razorpay payment flow (simulated success is acceptable).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-multi-step-checkout-flow-step-1-address-entry-form-in-indian-format-name-phone-address-line-1-address-line-2-city-state-pincode-step-2-payment-method-selection-razorpay-upi-test-mock-or-cash-on-delivery-step-3-order-success-page-showing-order-confirmation-order-id-and-a-continue-shopping-button",
+      "title": "Build a multi-step Checkout flow: Step 1 – address entry form in Indian format (Name, Phone, Address Line 1, Address Line 2, City, State, Pincode); Step 2 – payment method selection (Razorpay UPI test [mock] or Cash on Delivery); Step 3 – Order Success page showing order confirmation, order ID, and a 'Continue Shopping' button.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-wishlist-page-that-displays-all-wishlisted-products-each-item-should-have-an-add-to-cart-button-and-a-remove-from-wishlist-button-wishlist-state-must-be-managed-in-react-state-or-a-simple-context-store-and-persist-through-the-session",
+      "title": "Build a Wishlist page that displays all wishlisted products. Each item should have an 'Add to Cart' button and a 'Remove from Wishlist' button. Wishlist state must be managed in React state (or a simple context/store) and persist through the session.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-login-and-signup-pages-with-simple-form-fields-name-for-signup-email-password-use-internet-identity-or-a-simple-local-auth-state-no-backend-required-mock-jwt-or-session-state-stored-in-localstorage-is-acceptable-after-login-show-the-user-s-name-in-the-header-in-place-of-the-login-link-and-enable-access-to-order-history",
+      "title": "Build Login and Signup pages with simple form fields (name for signup, email, password). Use Internet Identity or a simple local auth state (no backend required — mock JWT or session state stored in localStorage is acceptable). After login, show the user's name in the header in place of the 'Login' link, and enable access to order history.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-order-history-page-accessible-after-login-that-lists-all-orders-placed-in-the-current-session-showing-order-id-date-items-ordered-total-amount-and-payment-method-razorpay-or-cod",
+      "title": "Build an Order History page accessible after login that lists all orders placed in the current session, showing order ID, date, items ordered, total amount, and payment method (Razorpay or COD).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-cart-and-wishlist-state-management-using-react-context-or-a-lightweight-global-store-since-redux-toolkit-is-not-available-in-this-stack-cart-state-must-survive-navigation-between-pages-within-the-same-session-persist-cart-and-wishlist-to-localstorage-so-they-survive-page-refreshes",
+      "title": "Implement cart and wishlist state management using React Context or a lightweight global store (since Redux Toolkit is not available in this stack). Cart state must survive navigation between pages within the same session. Persist cart and wishlist to localStorage so they survive page refreshes.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AJIO-style homepage with offer strip, search bar, logo, nav icons, hero banner carousel, bank offer strip, product grid, and footer",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Product listing with 5 seeded products (AuraBuds Pro, NightDock, SnapGrip, HyperKey, LumiCam) showing image, price, MRP, discount, COD badge, wishlist & add-to-cart buttons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Product details page with large image, full description, key features, price/MRP/discount, COD info, Add to Cart and Buy Now buttons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Cart page with quantity update, remove item, price summary, free delivery above ₹999, COD option, and Razorpay test payment button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Checkout flow: address selection (Indian format), payment method (Razorpay UPI test or COD), order placement, and order success page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "User auth: signup/login with JWT, wishlist management, and order history page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Backend REST APIs: auth (register/login), products (list/detail), orders (create/my orders), MongoDB models, seed script for 5 products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Implement backend Motoko actor with the following data storage: (1) Product list with all 5 seeded ZENTEK products (name, imageUrl, price, mrp, description, keyFeatures, codAvailable); (2) User accounts (username, email, hashed-equivalent password); (3) Orders (userId, items, totalAmount, paymentMethod, address, timestamp). Expose query functions: getProducts(), getProduct(id), and update functions: createUser(), loginUser(), createOrder(), getMyOrders(userId).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "ZENTEK",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,5 @@
+{
+  "frontend/src/components/product/ProductCard.tsx": "Product card component displaying image, price, discount badge, wishlist toggle, and Add to Cart button; uses useNavigate with params instead of template literal Link to for type-safe routing to /product/$id.",
+  "frontend/src/pages/CartPage.tsx": "Cart page listing all cart items with quantity controls, remove buttons, price summary with delivery calculation, payment method selection (Razorpay/COD), and Proceed to Pay button; uses useNavigate with params for type-safe product navigation.",
+  "frontend/src/pages/WishlistPage.tsx": "Wishlist page displaying all saved products in a grid with Add to Cart and Remove from Wishlist actions; uses useNavigate with params for type-safe routing to product detail pages."
+}

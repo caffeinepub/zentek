@@ -1,0 +1,84 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T15:51:29.425Z",
+  "summary": "The diff implements most of the required features for the ZENTEK e-commerce app. Frontend pages, contexts, components, and routing are all present. The backend Motoko actor exists but uses incorrect seeded product data (wrong names, images, prices) instead of the 5 specified ZENTEK products. Several pages referenced in App.tsx were omitted from the diff due to truncation limits, making full verification difficult for those pages.",
+  "missing_requirements": [
+    {
+      "id": "REQ-12",
+      "requirement": "Backend Motoko actor must seed all 5 ZENTEK products with correct names, imageUrls, prices, MRPs, descriptions, keyFeatures, and codAvailable flags (AuraBuds Pro, NightDock, SnapGrip, HyperKey, LumiCam).",
+      "reason": "The backend/main.mo seeds products named 'ZENTEK Solar Power Bank', 'ZENTEK UV Water Purifier', 'ZENTEK Eco-Friendly LED Bulbs', etc. — not the required 5 ZENTEK products with their specified prices and image URLs.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Expose createUser() and loginUser() functions on the backend actor for basic auth with email and password.",
+      "reason": "The backend actor exposes saveCallerUserProfile/getCallerUserProfile using Principal-based identity, but no explicit createUser() or loginUser() functions with email/password are visible in the diff.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Backend actor uses Internet Identity Principal-based access control with MixinAuthorization and MixinStorage components, adding blob storage and role-based access control.",
+      "reason": "The spec requires a simple Motoko actor with product/user/order storage only. No access control middleware, blob storage mixin, or Principal-based user profiles were requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Product sort functionality (priceAscending/priceDescending) implemented in the backend Product module.",
+      "reason": "No sorting capability was requested in the build spec.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Checkout page integrates with Internet Identity (useInternetIdentity) and the backend actor (useCreateOrder) for order placement, tying the checkout flow to ICP authentication.",
+      "reason": "The spec allows all persistence in localStorage with mock auth and does not require Internet Identity integration in the checkout flow.",
+      "evidence": [
+        "frontend/src/pages/CheckoutPage.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/home/BankOfferStrip.tsx",
+    "frontend/src/components/home/HeroCarousel.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/components/layout/Layout.tsx",
+    "frontend/src/components/layout/OfferStrip.tsx",
+    "frontend/src/components/product/ProductCard.tsx",
+    "frontend/src/contexts/AuthContext.tsx",
+    "frontend/src/contexts/CartContext.tsx",
+    "frontend/src/contexts/WishlistContext.tsx",
+    "frontend/src/data/products.ts",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CartPage.tsx",
+    "frontend/src/pages/CheckoutPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/LoginPage.tsx",
+    "frontend/src/pages/OrderHistoryPage.tsx",
+    "frontend/src/pages/OrderSuccessPage.tsx",
+    "frontend/src/pages/ProductDetailsPage.tsx",
+    "frontend/src/pages/SignupPage.tsx",
+    "frontend/src/pages/WishlistPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
